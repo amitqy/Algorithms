@@ -1,8 +1,8 @@
-import java.util.* ;
-import java.io.*;
-import java.util.ArrayList;
+package com.example.twopointers.maxdiff;
 
-public class Solution {
+import java.util.* ;
+import java.util.ArrayList;
+public class SolutionMaxDiff {
     public static int maxDiff(ArrayList<Integer> a, int n) {
         // Write your code here.
         List<Integer> maxArr = new ArrayList<>();
@@ -31,5 +31,9 @@ public class Solution {
             }
         }
         return diff;
+    }
+
+    public static void main(String[] args) {
+
     }
 }

@@ -1,5 +1,6 @@
+package com.example.twopointers.thecelebrityproblem;
 import java.util.* ;
-import java.io.*;
+
 /*
 	This is signature of helper function 'knows'.
 	You should not implement it, or speculate about its implementation.
@@ -10,8 +11,8 @@ import java.io.*;
 	Use it as Runner.knows(A, B);
 */
 
-public class Solution {
-    public static int findCelebrity(int n) {
+public class SolutionCelebProblem {
+    public int findCelebrity(int n) {
         // Write your code here
         Stack<Integer> s = new Stack<>();
         for(int i = 0; i < n; i++){
@@ -22,7 +23,7 @@ public class Solution {
             int a = s.pop();
             int b = s.pop();
 
-            if(Runner.knows(a,b)){
+            if(knows(a,b)){
                 s.push(b);
             }
             else{
@@ -35,10 +36,15 @@ public class Solution {
             // the potential celeb should not know anyone
             // there shouldn't be anyone who does no the potential celeb except
             // himself
-            if(Runner.knows(ele,i) || (!Runner.knows(i,ele) && i != ele)){
+            if(knows(ele,i) || (knows(i,ele) && i != ele)){
                 return -1;
             }
         }
         return ele;
+    }
+
+    // stub method
+    public boolean knows(int a, int b){
+        return false;
     }
 }
